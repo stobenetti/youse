@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "install": "bower update",
-    "start": "concurrently \"npm run watch\" \"npm run server\"",
-    "server": "lite-server --baseDir=./app",
+    "start": "npm run watch",
     "watch": "concurrently \"gulp watch\" \"npm run compile\"",
-    "clean": "rm -rf ./public/assets && rm -f ./public/*.html",
-    "build": "npm run clean && npm run compile && gulp jsmin && rm -f ./public/assets/**/*.map",
+    "clean": "rm -rf ./assets",
+    "build": "npm run clean && npm run compile && gulp jsmin && rm -f ./assets/**/*.map",
     "compile": "gulp compile",
     "js": "gulp js",
     "css": "gulp css",
@@ -17,8 +16,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "3.5.0",
-    "lite-server": "2.3.0"
+    "concurrently": "3.5.0"
   },
   "dependencies": {
     "babel-plugin-transform-es2015-modules-strip": "0.1.1",
