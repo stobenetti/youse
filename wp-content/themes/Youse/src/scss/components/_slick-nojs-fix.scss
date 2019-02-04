@@ -1,0 +1,17 @@
+.slick-nojs-fix {
+    > * {
+        display: none !important;
+
+        &:first-child {
+            display: block !important;
+        }
+    }
+
+    img {
+        @include img-responsive(1);
+    }
+
+    &.slick-initialized > * {
+        display: block !important;
+    }
+}

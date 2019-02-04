@@ -1,0 +1,13 @@
+{
+	"injectChanges": true,
+	"files": [
+		"./public/**/*.{html,css,js}"
+	],
+	"watchOptions": {
+		"ignored": "node_modules"
+	},
+	"server": {
+		"baseDir": "./public"
+	},
+	"reloadDelay": 1500
+}

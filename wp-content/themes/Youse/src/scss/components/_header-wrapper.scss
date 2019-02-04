@@ -1,0 +1,117 @@
+.header-wrapper {
+    @include transition;
+
+    position: fixed;
+    background: transparent;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    box-shadow: 0 3px 6px 0 rgba(#000, 0.1);
+    background-color: #fff;
+    padding: 24px 0;
+
+    @include mobile {
+        padding: 15px 0;
+    }
+
+
+    .header-container {
+        flex-flow: row;
+        align-items: center;
+
+        @include mobile {
+            padding: 0 16px;
+            justify-content: space-between;
+        }
+    }
+
+    .header-logo {
+        text-align: center;
+
+        a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none !important;
+        }
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    .menu-list {
+        display: flex;
+
+        li {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        a {
+            @include transition;
+
+            display: block;
+            padding: 42px 0;
+            text-decoration: none !important;
+            font-weight: $w-medium;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $white;
+            border-top: 6px solid transparent;
+
+            &.active,
+            &:hover {
+                border-top-color: $white;
+            }
+
+            body.is-scrolled & {
+                color: #3e3e3e;
+
+                &.active,
+                &:hover {
+                    color: #061747;
+                    border-top-color: #061747;
+                }
+            }
+        }
+    }
+
+    .header-menu-links {
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+        font-size: 15px;
+        color: #6b7b84;
+
+        @include mobile {
+            display: none;
+        }
+
+
+        a {
+            display: block;
+            position: relative;
+            text-decoration: none !important;
+
+            &:before {
+                @include transition;
+
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 1px;
+                background-color: $color-primary;
+            }
+
+            &:hover:before {
+                width: 100%;
+            }
+        }
+    }
+}

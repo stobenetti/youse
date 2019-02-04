@@ -1,0 +1,104 @@
+html,
+body,
+div,
+nav,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+legend,
+pre,
+code,
+a,
+h1, h2, h3, h4, h5, h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+table,
+td,
+th,
+tr,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+.border-box {
+    box-sizing: border-box;
+}
+
+div,
+nav,
+header,
+footer,
+section {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        list-style: none;
+    }
+}
+
+strong {
+    font-weight: $w-bold;
+}
+
+a {
+    color: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: $container-lg;
+
+    @include responsive(0, $screen-xs-max) {
+        width: $container-xs;
+    }
+
+
+    @include responsive($screen-sm-min, $screen-sm-max) {
+        width: $container-sm;
+    }
+}
+
+.sr-only {
+    @include sr-only;
+}

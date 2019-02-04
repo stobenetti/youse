@@ -1,0 +1,37 @@
+body {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: $header-height-desktop;
+
+    @include mobile {
+        padding-top: $header-height-mobile !important;
+    }
+
+
+    &.menu-toggled {
+        overflow: hidden;
+    }
+
+    @include mobile {
+        &.header-nav-is-visible {
+            overflow: hidden;
+        }
+    }
+}
+
+@import "../components/gl-button";
+@import "../components/gl-text";
+@import "../components/gl-line-fix";
+@import "../components/gl-backdrop";
+@import "../components/slick-nojs-fix";
+@import "../components/gl-m";
+@import "../components/gl-col";
+@import "../components/gl-link";
+@import "../components/gl-icon";
+@import "../components/slick-nojs-fix";
+
+@import "../components/main-section";
+@import "../components/page-information";
+@import "../components/img-responsive";

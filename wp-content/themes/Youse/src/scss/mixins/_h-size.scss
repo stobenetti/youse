@@ -1,0 +1,9 @@
+@mixin size($width, $height: $width, $max: 0) {
+	@if $max != 0 {
+		max-width: #{$width}px;
+		max-height: #{$height}px;
+	} @else {
+		width: #{$width}px;
+		height: #{$height}px;
+	}
+}

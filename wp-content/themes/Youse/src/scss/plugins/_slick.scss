@@ -1,0 +1,43 @@
+@import "slick-carousel/slick/slick.scss";
+
+.slick-slider {
+    .slick-slide {
+        margin: 0 140px;
+        outline: none;
+
+        @include mobile {
+            margin: 0 10px;
+        }
+    }
+
+    .slick-dots {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+
+        button {
+            @extend %reset-button;
+
+            @include transition;
+            @include remove-text;
+
+            display: block;
+            padding: 0;
+            width: 10px;
+            height: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: #3e3e3e;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+
+            &.slick-active button {
+                width: 20px;
+                background-color: $color-primary;
+            }
+        }
+    }
+}

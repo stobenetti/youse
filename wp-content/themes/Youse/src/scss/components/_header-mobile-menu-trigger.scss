@@ -1,0 +1,44 @@
+.header-mobile-menu-trigger {
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    z-index: 1000000000000000000;
+
+    @include desktop {
+        display: none;
+    }
+
+
+    .header-mobile-menu-button {
+        @extend %reset-button;
+
+        color: $black;
+        font-size: 25px;
+        padding: 0;
+        height: 45px;
+        width: 45px;
+
+        div {
+            @include transition;
+
+            width: 35px;
+            height: 5px;
+            background-color: $black;
+            margin: 6px auto;
+        }
+
+        .menu-toggled & div {
+            transform: rotate(-45deg) translate(-9px, 6px);
+
+            + div {
+                transform: none;
+                opacity: 0;
+            }
+
+            + div + div {
+                transform: rotate(45deg) translate(-8px, -8px);
+                opacity: 1;
+            }
+        }
+    }
+}

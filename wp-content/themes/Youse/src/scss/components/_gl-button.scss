@@ -1,0 +1,48 @@
+.gl-button {
+    @extend %reset-button;
+
+    @include transition;
+
+    display: inline-block;
+    height: 45px;
+    line-height: 41px;
+    text-transform: uppercase;
+    padding: 0 35px;
+    overflow: hidden;
+    color: $white;
+    background-color: transparent;
+    border: 2px solid $white;
+    border-radius: 42px;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 18px;
+    cursor: pointer;
+
+    @include mobile {
+        display: block;
+    }
+
+
+    &[disabled] {
+        background-color: #e4e4e4 !important;
+        color: #383838 !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $white;
+        color: $color-primary;
+    }
+
+    &.gl-small {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 14px 20px;
+    }
+
+    &.gl-block {
+        display: block;
+        width: 100%;
+    }
+}

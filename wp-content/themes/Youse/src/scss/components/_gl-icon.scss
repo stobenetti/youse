@@ -1,0 +1,20 @@
+$icons: (
+	twitter: 87,
+	instagram: 51,
+	linkedin: 16,
+	facebook: 0,
+);
+
+.gl-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('../img/icon-sprite.png');
+	background-position-y: 0;
+
+	@each $name, $coord in $icons {
+		&[name="#{$name}"] {
+			background-position-x: $coord * 1px;
+		}
+	}
+}

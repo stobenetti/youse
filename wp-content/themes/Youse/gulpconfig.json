@@ -1,0 +1,49 @@
+{
+	"schema": "1.0.0",
+	"paths": {
+		"input": {
+			"scss": {
+				"main": "./src/scss/main.scss",
+				"watch": "./src/scss/**/*.scss",
+				"import": "./bower_components/"
+			},
+			"html": {
+				"files": "./src/html/**/[^_]*.html",
+				"watch": "src/html/**/*.html",
+				"handlebars": "./src/html/handlebars/*.js",
+				"import": "./src/html/"
+			},
+			"js": {
+				"plugins": [
+					"./bower_components/jquery/dist/jquery.min.js",
+					"./bower_components/slick-carousel/slick/slick.min.js",
+					"./bower_components/vanilla-lazyload/dist/lazyload.min.js",
+					"./src/js/plugins/**/*.js"
+				],
+				"custom": [
+					"./src/js/polyfills/**/*.js",
+					"./src/js/system/**/*.js",
+					"./src/js/components/**/*.js",
+					"./src/js/common/**/*.js",
+					"./src/js/pages/**/*.js",
+					"./src/js/start/**/*.js"
+				],
+				"watch": "./src/js/**/*.js"
+			},
+			"img": [
+				"./src/img/**/*.{png,jpg,gif}",
+				"!./src/img/example/*"
+			],
+			"fonts": [
+				"./src/fonts/**/*.{eot,svg,ttf,woff,woff2}"
+			]
+		},
+		"output": {
+			"css": "./assets/css/",
+			"js": "./assets/js/",
+			"img": "./assets/img/",
+			"html": "./public/",
+			"fonts": "./public/assets/fonts/"
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.footer-wrapper {
+    background-color: #5f259f;
+    color: $white;
+    font-size: 12px;
+    line-height: 15px;
+
+    div:not(:last-child) p {
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        @include desktop {
+            flex-flow: row;
+            justify-content: space-between;
+        }
+
+
+        @include mobile {
+            align-items: center;
+        }
+    }
+
+    .footer-social-links {
+        @include mobile {
+            margin-top: 15px;
+        }
+
+
+        a {
+            @include transition;
+
+            text-decoration: none !important;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+}

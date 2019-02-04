@@ -1,0 +1,15 @@
+header {
+    .header {
+        @include transition;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+
+    @import "../components/header-wrapper";
+    @import "../components/mobile-menu-wrapper";
+    @import "../components/header-mobile-menu-trigger";
+}

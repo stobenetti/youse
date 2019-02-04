@@ -1,0 +1,82 @@
+// .gl-ml-1, .gl-mx-3, etc...
+
+$margins: (
+	0: (
+		desktop: 0,
+		mobile: 0,
+	),
+	1: (
+		desktop: 15,
+		mobile: 10,
+	),
+	2: (
+		desktop: 30,
+		mobile: 20,
+	),
+	3: (
+		desktop: 60,
+		mobile: 30,
+	),
+	4: (
+		desktop: 110,
+		mobile: 40,
+	),
+	5: (
+		desktop: 150,
+		mobile: 60,
+	),
+);
+
+$sides: (
+	'l': ('left'),
+	'r': ('right'),
+	't': ('top'),
+	'b': ('bottom'),
+	'x': ('right', 'left'),
+	'y': ('top', 'bottom'),
+	'': ('top', 'bottom', 'right', 'left'),
+);
+
+@each $key, $value in $margins {
+	@each $abbr, $side in $sides {
+		.gl-m#{$abbr}-#{$key} {
+			@each $s in $side {
+				margin-#{$s}: #{map-get($value, desktop)}px;
+			}
+
+			@include mobile() {
+				@each $s in $side {
+					margin-#{$s}: #{map-get($value, mobile)}px;
+				}
+			}
+		}
+
+		.gl-p#{$abbr}-#{$key} {
+			@each $s in $side {
+				padding-#{$s}: #{map-get($value, desktop)}px;
+			}
+
+			@include mobile() {
+				@each $s in $side {
+					padding-#{$s}: #{map-get($value, mobile)}px;
+				}
+			}
+		}
+
+		.gl-mob-m#{$abbr}-#{$key} {
+			@include mobile() {
+				@each $s in $side {
+					margin-#{$s}: #{map-get($value, mobile)}px !important;
+				}
+			}
+		}
+
+		.gl-mob-p#{$abbr}-#{$key} {
+			@include mobile() {
+				@each $s in $side {
+					padding-#{$s}: #{map-get($value, mobile)}px !important;
+				}
+			}
+		}
+	}
+}
