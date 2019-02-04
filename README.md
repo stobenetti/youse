@@ -1,1 +1,1 @@
-youse
+Nome do diretório local para testes: "wp"
